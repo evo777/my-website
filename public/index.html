@@ -17,6 +17,17 @@
     <div id="app"></div>
 
     <script type="text/babel">
+      var Navbar = React.createClass({
+        PropTypes: {
+          brand: React.PropTypes.string.isRequired
+        },
+
+        getDefaultProps: function() {
+          return {
+            brand: 'My Website',
+            color: 'light'
+          }
+        },
 
         render: function() {
           if (this.props.color === "dark") {
