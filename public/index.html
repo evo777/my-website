@@ -128,6 +128,26 @@
         }
       });
 
+      var Footer = React.createClass({
+        getDefaultProps: function() {
+          return {
+            name: "Emmanuel Vo",
+            copy_year: 2017
+          }
+        },
+        render: function() {
+          return (
+            <div className="container">
+              <hr />
+
+                <footer>
+                  <p>&copy; {this.props.copy_year} {this.props.name}</p>
+                </footer>
+            </div>
+          )
+        }
+      });
+
       ReactDOM.render(
         <App />,
         document.getElementById('app')
