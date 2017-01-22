@@ -113,6 +113,21 @@
         }
       });
 
+      var PageAbout = React.createClass({
+        render: function() {
+          return (
+            <div className="container">
+              <div className="row">
+                <h2 className="page-header">About Me</h2>
+                <p>My name is Emmanuel Vo and my goal is to become a web developer. I am very passionate about React.js and love making web applications. <br />
+                Here is my github: <a href="https://github.com/evo777">https://github.com/evo777</a>
+                </p>
+              </div>
+            </div>
+          )
+        }
+      });
+
       ReactDOM.render(
         <App />,
         document.getElementById('app')
