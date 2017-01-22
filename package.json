@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/evo777/my-website/issues"
   },
-  "homepage": "https://github.com/evo777/my-website#readme"
+  "homepage": "https://github.com/evo777/my-website#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
