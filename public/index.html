@@ -73,6 +73,32 @@
         }
       });
 
+      var Jumbotron = React.createClass({
+      PropTypes: {
+        heading: React.PropTypes.string,
+        text: React.PropTypes.string,
+        link: React.PropTypes.string
+      },
+      getDefaultProps: function() {
+        return {
+          heading: 'Welcome!',
+          text: 'Welcome to my new website built using React.js',
+          link: 'https://github.com/evo777'
+        }
+      },
+      render: function() {
+        return (
+          <div className="jumbotron">
+            <div className="container">
+              <h1>{this.props.heading}</h1>
+              <p>{this.props.text}</p>
+              <p><a className="btn btn-primary btn-lg" href={this.props.link} role="button">Learn more &raquo;</a></p>
+            </div>
+          </div>
+        )
+      }
+    });
+
 
       ReactDOM.render(
         <App />,
