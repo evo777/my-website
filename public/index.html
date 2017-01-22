@@ -18,87 +18,100 @@
 
     <script type="text/babel">
       var Navbar = React.createClass({
-        PropTypes: {
-          brand: React.PropTypes.string.isRequired
-        },
+          PropTypes: {
+            brand: React.PropTypes.string.isRequired
+          },
 
+          getDefaultProps: function() {
+            return {
+              brand: 'My Website',
+              color: 'light'
+            }
+          },
+
+          render: function() {
+            if (this.props.color === "dark") {
+              var navClass = 'navbar navbar-inverse';
+            } else {
+              var navClass = 'navbar navbar-default';
+            }
+
+            var homeActive = '';
+            var aboutActive = '';
+
+            if (this.props.page === 'home') {
+              homeActive = 'active';
+            } else if (this.props.page === 'about') {
+              aboutActive = 'active';
+            }
+
+            return  (
+              <div>
+                <nav className={navClass}>
+                  <div className="container-fluid">
+                    <div className="navbar-header">
+                      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span className="sr-only">Toggle navigation</span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                      </button>
+                      <a className="navbar-brand" href="#">{this.props.brand}</a>
+                    </div>
+
+                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul className="nav navbar-nav">
+                        <li className={homeActive}><a onClick={this.props.homeClick} href="#">Home</a></li>
+                        <li className={aboutActive}><a onClick={this.props.aboutClick} href="#">About</a></li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            )
+          }
+        });
+
+      var Jumbotron = React.createClass({
+        PropTypes: {
+          heading: React.PropTypes.string,
+          text: React.PropTypes.string,
+          link: React.PropTypes.string
+        },
         getDefaultProps: function() {
           return {
-            brand: 'My Website',
-            color: 'light'
+            heading: 'Welcome!',
+            text: 'Welcome to my new website built using React.js',
+            link: 'https://github.com/evo777'
           }
         },
-
         render: function() {
-          if (this.props.color === "dark") {
-            var navClass = 'navbar navbar-inverse';
-          } else {
-            var navClass = 'navbar navbar-default';
-          }
-
-          var homeActive = '';
-          var aboutActive = '';
-
-          if (this.props.page === 'home') {
-            homeActive = 'active';
-          } else if (this.props.page === 'about') {
-            aboutActive = 'active';
-          }
-
-          return  (
-            <div>
-              <nav className={navClass}>
-                <div className="container-fluid">
-                  <div className="navbar-header">
-                    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span className="sr-only">Toggle navigation</span>
-                      <span className="icon-bar"></span>
-                      <span className="icon-bar"></span>
-                      <span className="icon-bar"></span>
-                    </button>
-                    <a className="navbar-brand" href="#">{this.props.brand}</a>
-                  </div>
-
-                  <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul className="nav navbar-nav">
-                      <li className={homeActive}><a onClick={this.props.homeClick} href="#">Home</a></li>
-                      <li className={aboutActive}><a onClick={this.props.aboutClick} href="#">About</a></li>
-                    </ul>
-
-                  </div>
-                </div>
-              </nav>
+          return (
+            <div className="jumbotron">
+              <div className="container">
+                <h1>{this.props.heading}</h1>
+                <p>{this.props.text}</p>
+                <p><a className="btn btn-primary btn-lg" href={this.props.link} role="button">Learn more &raquo;</a></p>
+              </div>
             </div>
           )
         }
       });
 
-      var Jumbotron = React.createClass({
-      PropTypes: {
-        heading: React.PropTypes.string,
-        text: React.PropTypes.string,
-        link: React.PropTypes.string
-      },
-      getDefaultProps: function() {
-        return {
-          heading: 'Welcome!',
-          text: 'Welcome to my new website built using React.js',
-          link: 'https://github.com/evo777'
-        }
-      },
-      render: function() {
-        return (
-          <div className="jumbotron">
+      var PageHome = React.createClass({
+        render: function() {
+          return (
             <div className="container">
-              <h1>{this.props.heading}</h1>
-              <p>{this.props.text}</p>
-              <p><a className="btn btn-primary btn-lg" href={this.props.link} role="button">Learn more &raquo;</a></p>
+              <div className="row">
+                <h2 className="page-header">Web Applications</h2>
+                <p><a href="https://digital-clock.herokuapp.com/">Digital Clock</a> - A clock that displays your local time.</p>
+                <p><a href="https://ev-calculator.herokuapp.com/">Calculator</a> - A calculator that can do addition, subtraction, multiplication, and division.</p>
+              </div>
             </div>
-          </div>
-        )
-      }
-    });
-
+          )
+        }
+      });
 
       ReactDOM.render(
         <App />,
