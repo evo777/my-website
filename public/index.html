@@ -113,6 +113,19 @@
         }
       });
 
+      var ReactSection = React.createClass({
+        render: function() {
+          return (
+            <div className="container">
+              <div className="row">
+                <h2 className="page-header">React Applications</h2>
+                <p><a href="https://digital-clock.herokuapp.com/">Digital Clock</a> - A clock that displays your local time.</p>
+              </div>
+            </div>
+          )
+        }
+      });
+
       var MobileHome = React.createClass({
         render: function() {
           return (
@@ -197,6 +210,7 @@
               <Navbar color="dark" page={this.state.page} homeClick={this.handleHomeClick} aboutClick={this.handleAboutClick}/>
               {jumbotron}
               {page}
+              <ReactSection />
               <MobileHome />
               <Footer />
             </div>
