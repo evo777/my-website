@@ -121,7 +121,7 @@
                 <h2 className="page-header">React Applications</h2>
                 <p>Github Finder - An application that searches github profile and displays their information.</p>
                 <p>Repo: <a href="https://github.com/evo777/github-finder">link</a></p> <br />
-                <p><a href="https://ev-website.herokuapp.com/">My website</a> - This web portfolio that is created in React.</p>
+                <p><a href="https://ev-website.herokuapp.com/">My website</a> - This web portfolio that is created in React.js.</p>
                 <p>Repo: <a href="https://github.com/evo777/my-website">link</a></p>
               </div>
             </div>
@@ -203,6 +203,8 @@
           if (this.state.page === 'home') {
             var jumbotron = <Jumbotron />
             var page = <PageHome />
+            var reactSection = <ReactSection />
+            var mobile = <MobileHome />
           } else if (this.state.page === 'about') {
             var jumbotron = '';
             var page = <PageAbout />
@@ -213,8 +215,8 @@
               <Navbar color="dark" page={this.state.page} homeClick={this.handleHomeClick} aboutClick={this.handleAboutClick}/>
               {jumbotron}
               {page}
-              <ReactSection />
-              <MobileHome />
+              {reactSection}
+              {mobile}
               <Footer />
             </div>
           )
