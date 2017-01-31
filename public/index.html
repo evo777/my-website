@@ -117,13 +117,13 @@
         }
       });
 
-      var stackMEAN = React.createClass({
+       var MEAN = React.createClass({
         render: function() {
           return (
             <div className="container">
               <div className="row">
                 <h2 className="page-header">MEAN Stack Applications</h2>
-                <p>Phone List - An application that allows you to store a person's phone number.</p>
+                <p>Phone List - An application allows you to store people's phone numbers.</p>
                 <p><a href="https://github.com/evo777/phone-list">Github Repository URL</a></p>
               </div>
             </div>
@@ -221,7 +221,7 @@
           if (this.state.page === 'home') {
             var jumbotron = <Jumbotron />
             var page = <PageHome />
-            var mean = <stackMEAN />
+            var mean = <MEAN />
             var reactSection = <ReactSection />
             var mobile = <MobileHome />
           } else if (this.state.page === 'about') {
