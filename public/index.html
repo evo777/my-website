@@ -118,7 +118,7 @@
         }
       });
 
-      var MEAN = React.createClass({
+      var stackMEAN = React.createClass({
         render: function() {
           return (
             <div className="container">
@@ -224,6 +224,7 @@
             var page = <PageHome />
             var reactSection = <ReactSection />
             var mobile = <MobileHome />
+            var mean = <stackMEAN />
           } else if (this.state.page === 'about') {
             var jumbotron = '';
             var page = <PageAbout />
@@ -234,6 +235,7 @@
               <Navbar color="dark" page={this.state.page} homeClick={this.handleHomeClick} aboutClick={this.handleAboutClick}/>
               {jumbotron}
               {page}
+              {mean}
               {reactSection}
               {mobile}
               <Footer />
