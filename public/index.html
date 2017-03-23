@@ -124,7 +124,7 @@
         }
       });
 
-       var MEAN = React.createClass({
+      var MEAN = React.createClass({
         render: function() {
           return (
             <div className="container">
@@ -135,6 +135,19 @@
                 <p>Frontend: AngularJS, HTML5, CSS3</p>
                 <p>Backend: Node.js, ExpressJS, MongoDB</p>
                 <p><a href="https://github.com/evo777/phone-list">GitHub Repository URL</a></p>
+              </div>
+            </div>
+          )
+        }
+      });
+
+      var NodeExpress = React.createClass({
+        render: function() {
+          return (
+            <div className="container">
+              <div className="row">
+                <h2 className="page-header">Node.js and Express.js Applications</h2>
+                <p>Test</p>
               </div>
             </div>
           )
@@ -289,6 +302,7 @@
             var jumbotron = <Jumbotron />
             var page = <PageHome />
             var mean = <MEAN />
+            var node = <NodeExpress />
             var reactSection = <ReactSection />
             var mobile = <MobileHome />
           } else if (this.state.page === 'about') {
@@ -302,6 +316,7 @@
               {jumbotron}
               {page}
               {mean}
+              {node}
               {reactSection}
               {mobile}
               <Footer />
