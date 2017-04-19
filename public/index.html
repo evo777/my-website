@@ -173,6 +173,21 @@
         }
       });
 
+
+       var ReactRedux = React.createClass({
+        render: function() {
+          return (
+            <div className="container">
+              <div className="row">
+               <h2 className="page-header">React.js with Redux Applications</h2>
+              </div>
+            </div>
+          )
+        }
+      });
+
+
+
       var ReactSection = React.createClass({
         render: function() {
           return (
@@ -330,6 +345,7 @@
             var mean = <MEAN />
             var node = <NodeExpress />
             var reactSection = <ReactSection />
+            var redux = <ReactRedux />
             var mobile = <MobileHome />
           } else if (this.state.page === 'about') {
             var jumbotron = '';
@@ -340,10 +356,11 @@
             <div>
               <Navbar color="dark" page={this.state.page} homeClick={this.handleHomeClick} aboutClick={this.handleAboutClick}/>
               {jumbotron}
+              {redux}
+              {reactSection}
+              {node}
               {page}
               {mean}
-              {node}
-              {reactSection}
               {mobile}
               <Footer />
             </div>
