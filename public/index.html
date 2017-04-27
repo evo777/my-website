@@ -208,6 +208,25 @@
       });
 
 
+      var MERNSection = React.createClass({
+        render: function() {
+          return (
+            <div className="container">
+              <div className="row">
+                <h2 className="page-header">MERN Full-Stack Application</h2>
+                <p>Backlog Game - This application allows you to keep tracks of your games played and make a plan on when to finish them.</p>
+                <p>Technology stack used:</p>
+                <p>Frontend: React.js, HTML5, CSS3</p>
+                <p>Backend: Node.js, Express.js, MongoDB</p>
+                <p>Tools: Webpack</p>
+                <p><a href="https://github.com/evo777/backlog-game">Github Repository URL </a></p> <br />
+              </div>
+            </div>
+          )
+        }
+      });
+
+
 
       var ReactSection = React.createClass({
         render: function() {
@@ -364,6 +383,7 @@
             var jumbotron = <Jumbotron />
             var page = <PageHome />
             var mean = <MEAN />
+            var mern = <MERNSection/>
             var node = <NodeExpress />
             var reactSection = <ReactSection />
             var redux = <ReactRedux />
@@ -379,6 +399,7 @@
               {jumbotron}
               {redux}
               {reactSection}
+              {mern}
               {node}
               {page}
               {mean}
